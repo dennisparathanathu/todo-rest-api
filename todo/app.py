@@ -62,7 +62,7 @@ def create_app(env_name):
         data = request.get_json(force=True)
         print(data)
 
-        
+
         new_todos = TodosModel(title=data['title'], contents=data['contents'], created_dt=datetime.datetime.utcnow(), tododate=data['tododate'], user_id=current_user.id)
         db.session.add(new_todos)
         db.session.commit()
